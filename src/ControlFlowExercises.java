@@ -1,22 +1,21 @@
 public class ControlFlowExercises {
     public static void main(String[] args) {
-//        int i = 0;
-//        do {
-//            System.out.printf("The value of i is %s%n", i);
-//            i += 2;
-//        } while (i <= 100);
 
-//        int i = 100;
-//        do {
-//            System.out.printf("The value of i is %s%n", i);
-//            i -= 5;
-//        } while (i >= -10);
+        // while loop exercise refactored with a for loop
+//        for (int i = 5; i <= 15; ++i) {
+//            System.out.print(i);
+//        }
+        // do while loop exercise refactored with a for loop
+//        for (int i = 0; i <= 100; i += 2) {
+//            System.out.printf("The value of i is: %s%n", i);
+//        }
 
-        long i = 2;
-        do {
-            System.out.printf("The value of i is %s%n", i);
-            i *= i;
-        } while (i < 1000000);
+//        for (int i = 100; i >= 0; i -= 5) {
+//            System.out.printf("The value of i is: %s%n", i);
+//        }
 
+        for (long i = 2; i < 1000000; i *= i) {
+            System.out.printf("The value of i is: %s%n", i);
+        }
     }
 }
