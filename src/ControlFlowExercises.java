@@ -6,22 +6,23 @@ public class ControlFlowExercises {
         Scanner scanner = new Scanner(System.in);
 
         String userResponse = "";
-        String yes = "yes";
         do {
-            System.out.println("Please enter a number.");
-            int userInputNum = scanner.nextInt();
-
-            String table = "The number you have entered is: " + userInputNum + "\n\n" +
-                    "Here is your table!\n\n" +
-                    "number | squared | cubed\n" +
-                    "------ | ------- | -----\n";
-
-            for (int i = 1; i <= userInputNum; ++i) {
-                table += i + "      | " + i * i + "       | " + i * i * i + "\n";
+            System.out.println("Please enter a grade number from 0-100");
+            int userInputGrade = scanner.nextInt();
+            if (userInputGrade >= 88) {
+                System.out.println("The grade you entered is: A");
+            } else if (userInputGrade >= 80 && userInputGrade <= 87) {
+                System.out.println("The grade you entered is: B");
+            } else if (userInputGrade >= 67 && userInputGrade <= 79) {
+                System.out.println("The grade you entered is: C");
+            } else if (userInputGrade >= 60 && userInputGrade <= 66) {
+                System.out.println("The grade you entered is: D");
+            } else if (userInputGrade >= 0 && userInputGrade <= 59) {
+                System.out.println("The grade you entered is: F");
             }
-            System.out.println(table);
-            System.out.println("Would you like to continue?\nEnter yes to continue or no to stop.");
+            System.out.println("Would like to continue?\nEnter yes to continue or no to stop.");
             userResponse = scanner.next();
-        } while (userResponse.equals(yes));
+        } while (userResponse.equals("yes"));
+
     }
 }
