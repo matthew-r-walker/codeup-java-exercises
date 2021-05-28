@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class MethodsExercises {
 
-
     // 1. Basic Arithmetic
     public static int add(int num1, int num2) {
         return num1 + num2;
@@ -43,11 +42,6 @@ public class MethodsExercises {
     //////////////////////////////
 
     // 2. Create a method that validates that user input is in a certain range
-
-//    public static int getInteger(int min, int max){
-//    }
-
-
     public static int getInteger(int min, int max) {
         System.out.printf("Enter a number between %d and %d:%n", min, max);
         Scanner scanner = new Scanner(System.in);
@@ -60,6 +54,7 @@ public class MethodsExercises {
         }
     }
 
+    // 3. Calculate the factorial of a number.
     public static long calculateFactorial(int num) {
         Scanner scanner = new Scanner(System.in);
         String outPut = num + "! = ";
@@ -77,7 +72,7 @@ public class MethodsExercises {
         }
         return fact;
     }
-
+    // 4. Create an application that simulates dice rolling.
     public static int randomNum(int num) {
         int randomInt = (int) (Math.random() * num) + 1;
         return randomInt;
@@ -90,37 +85,31 @@ public class MethodsExercises {
         return numOfSides;
     }
 
-    public static int diceRoll(int num, int num2) {
+    // Takes in a number of sides for the dice roll and a second number that tells diceRoll if it should prompt the user initially or not.
+    public static void diceRoll(int num, int num2) {
         Scanner scanner = new Scanner(System.in);
-//        System.out.println("Create a pair of dice!\nEnter how many sides you would like your dice to have.");
         int numOfSides = num;
         String userReply = "";
         if (num2 == 0) {
             System.out.printf("Would you like to roll your %d sided dice?%nReply yes to roll!%n", numOfSides);
             userReply = scanner.next();
         }
-
         if (userReply.equalsIgnoreCase("yes") || num2 == 1) {
             int die1 = randomNum(numOfSides);
             int die2 = randomNum(numOfSides);
             System.out.println("ROLLINNNNNGGG");
             System.out.printf("Your dice rolled %d and %d! Totaling %d.%n", die1 , die2, die1 + die2);
         }
-        System.out.println("Would you like to roll the dice again?\nReply yes to roll again.");
+        System.out.println("Would you like to roll the dice again?\nReply yes to roll again or no to stop.");
         userReply = scanner.next();
         if (userReply.equalsIgnoreCase("yes")) {
             diceRoll(numOfSides, 1);
         }
-        return 0;
     }
 
     public static void main(String[] args) {
 
-        diceRoll(diceCreator(), 0);
-//        System.out.println(randomNum(5));
-//        System.out.println(randomNum(5));
-//        System.out.println(randomNum(5));
-//        System.out.println(randomNum(5));
+//        diceRoll(diceCreator(), 0);
 //        int userInput = getInteger(1, 10);
 //        calculateFactorial(userInput);
 //        System.out.println(add(2, 3));
