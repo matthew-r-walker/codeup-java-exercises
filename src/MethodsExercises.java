@@ -11,9 +11,9 @@ public class MethodsExercises {
         return num1 - num2;
     }
 
-    public static int multiply(int num1, int num2) {
-        return num1 * num2;
-    }
+//    public static int multiply(int num1, int num2) {
+//        return num1 * num2;
+//    }
 
     // loop refactor
 //    public static int multiply(int num1, int num2) {
@@ -24,13 +24,18 @@ public class MethodsExercises {
 //        return total;
 //    }
 
-    //Working on recursion refactor
-//    public static int multiply(int num1, int num2) {
-//        if (num1 == 0 || num2 == 0) {
-//            return 0;
-//        } else if ()
-//
-//    }
+    // recursion refactor
+    public static int multiply(int num1, int num2) {
+        System.out.printf("This is num1 %d, this is num2 %d%n", num1, num2);
+        if (num1 == 0 || num2 == 0) {
+            return 0;
+        } else if (num1 == 1) {
+            System.out.printf("This is num2 final %d%n", num2);
+            return num2;
+        }
+        System.out.printf("This is outside logic num1 %d and num2 %d%n", num1, num2);
+        return multiply(num1 - 1, num2) + num2;
+    }
 
     public static int divide(int num1, int num2) {
         return num1 / num2;
@@ -64,14 +69,23 @@ public class MethodsExercises {
             fact *= i;
         }
         outPut += num + " = " + fact;
+        System.out.printf("Here is the factorial of %d%n", num);
         System.out.println(outPut);
-        System.out.println("Would you like to enter another number? Reply yes or no.");
+        System.out.println("Would you like to enter another number?\nReply yes or no.");
         String userReply = scanner.next();
         if (userReply.equalsIgnoreCase("yes")) {
             calculateFactorial(getInteger(1, 10));
         }
         return fact;
     }
+    // returns factorial of num with recursion
+//    public static long calculateFactorial(int num) {
+//        if (num == 0) {
+//            return 1;
+//        } else {
+//            return num * calculateFactorial(num - 1);
+//        }
+//    }
     // 4. Create an application that simulates dice rolling.
     public static int randomNum(int num) {
         int randomInt = (int) (Math.random() * num) + 1;
@@ -114,8 +128,7 @@ public class MethodsExercises {
 //        calculateFactorial(userInput);
 //        System.out.println(add(2, 3));
 //        System.out.println(subtract(3, 2));
-//        System.out.println(multiply(3, 2));
-//        System.out.println(divide(9, 9));
+        System.out.println(multiply(7, 11));
 //        System.out.println(remainder(0, 9));
     }
 }
