@@ -8,22 +8,17 @@ public class Input {
 
     public String getString() {
         System.out.println("Enter a sentence.");
-        String input = scanner.nextLine();
-        return input;
+        return scanner.nextLine();
     }
+
     public boolean yesNo() {
         System.out.println("Enter yes or no");
         String input = scanner.next();
-        if (input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("y")) {
-            return true;
-        } else {
-            return false;
-        }
+        return input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("y");
     }
     public int getInt(){
         System.out.println("Enter a number.");
-        int userInputNum = scanner.nextInt();
-        return userInputNum;
+        return scanner.nextInt();
     }
     public int getInt(int min, int max) {
         System.out.printf("Enter a number between %d and %d:%n", min, max);
@@ -37,8 +32,7 @@ public class Input {
     }
     public double getDouble(){
         System.out.println("Enter a number with a decimal.");
-        double userInputNum = scanner.nextDouble();
-        return userInputNum;
+        return scanner.nextDouble();
     }
     public double getDouble(double min, double max) {
         System.out.printf("Enter a number with a decimal between %f and %f:%n", min, max);
