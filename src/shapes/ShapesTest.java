@@ -9,6 +9,8 @@ public class ShapesTest {
         System.out.println(box1.getPerimeter());
         System.out.println(box1.getArea());
 
+
+        // Polymorphism example
         Rectangle box2 = new Square(5);
         System.out.printf("Square side length is: %.2f%n", box2.length);
         System.out.println(box2.getPerimeter());
