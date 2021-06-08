@@ -5,18 +5,18 @@ import java.util.Scanner;
 public class GroceryApp {
 
     public static String[] groceryCats = {
-        "1. Baby",
-        "2. Beverages",
-        "3. Bread & Bakery",
-        "4. Breakfast & Cereal",
-        "5. Canned Goods & Soups",
-        "6. Condiments/Spices & Bake",
-        "7. Cookies, Snacks & Candy",
-        "8. Dairy, Eggs & Cheese",
-        "9. Deli",
-        "10. Frozen Foods",
-        "11. Meat & Seafood",
-        "12. Produce"
+        "Baby",
+        "Beverages",
+        "Bread & Bakery",
+        "Breakfast & Cereal",
+        "Canned Goods & Soups",
+        "Condiments/Spices & Bake",
+        "Cookies, Snacks & Candy",
+        "Dairy, Eggs & Cheese",
+        "Deli",
+        "Frozen Foods",
+        "Meat & Seafood",
+        "Produce"
     };
 
     public static Input input = new Input();
@@ -26,8 +26,8 @@ public class GroceryApp {
         System.out.println("Would you like to create a grocery list?");
         if (input.yesNo()) {
             System.out.println("Which category would you like to choose from?");
-            for (String cat : groceryCats) {
-                System.out.println(cat);
+            for (int i = 0; i < groceryCats.length; ++i) {
+                System.out.println(i + 1 + ". " + groceryCats[i]);
             }
         }
         int userNum = input.getInt(1, 12);
