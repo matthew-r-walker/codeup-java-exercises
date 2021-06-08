@@ -26,8 +26,8 @@ public class Student {
         return grades;
     }
 
-    public void setGrades(ArrayList<Integer> grades) {
-        this.grades = grades;
+    public void setGrades(Integer...nums) {
+        this.grades = new ArrayList<>(Arrays.asList(nums));
     }
 
     public void addGrade(int grade) {
@@ -44,10 +44,10 @@ public class Student {
 
     public static void main(String[] args) {
         Student bob = new Student("Bob");
+        bob.setGrades(73, 70, 74);
         bob.addGrade(70);
         bob.addGrade(80);
         bob.addGrade(90);
-        bob.setGrades(new ArrayList<>(Arrays.asList(40, 30, 20)));
         System.out.println(bob.getGrades());
         System.out.println(bob.getGradeAverage());
         System.out.println(bob.grades);

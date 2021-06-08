@@ -13,7 +13,10 @@ public class GradesApplication {
         if (hasNotSearched) {
             System.out.println("Welcome!\n");
             System.out.println("Here are the GitHub usernames of our students:\n");
-            System.out.printf("%s%n%n",map.keySet());
+            for (String name : map.keySet()) {
+                System.out.print("|" + name + "|  ");
+            }
+            System.out.println("\n");
         }
         System.out.println("What student would you like information on?");
         String userChoice = sc.nextLine();
@@ -36,27 +39,17 @@ public class GradesApplication {
     public static void main(String[] args) {
         HashMap<String, Student> students = new HashMap<>();
         Student cody = new Student("Cody");
-        cody.addGrade(70);
-        cody.addGrade(75);
-        cody.addGrade(80);
+        cody.setGrades(70, 75, 80, 89);
         Student jim = new Student("Jim");
-        jim.addGrade(80);
-        jim.addGrade(90);
-        jim.addGrade(100);
+        jim.setGrades(80, 90, 100);
         Student bill = new Student("Bill");
-        bill.addGrade(75);
-        bill.addGrade(73);
-        bill.addGrade(85);
+        bill.setGrades(75, 73, 85);
         Student phil = new Student("Phil");
-        phil.addGrade(70);
-        phil.addGrade(73);
-        phil.addGrade(74);
+        phil.setGrades(70, 73, 74);
         students.put("cody-the-duck", cody);
         students.put("jimbo", jim);
         students.put("bill-mccoder", bill);
         students.put("philbug", phil);
-
-
         getUserInfo(students);
     }
 }
