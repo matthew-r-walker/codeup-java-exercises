@@ -22,7 +22,7 @@ public class GradesApplication {
         String userChoice = sc.nextLine();
         if (map.containsKey(userChoice)) {
             System.out.printf("Name: %s - GitHub Username: %s%n", map.get(userChoice).getName(), userChoice);
-            System.out.printf("Current Average: %.1f%n",map.get(userChoice).getGradeAverage());
+            System.out.printf("Current Average: %.1f | All grades: %s%n",map.get(userChoice).getGradeAverage(), map.get(userChoice).getGrades());
         } else {
             System.out.println("Sorry, no student with the GitHub user name of " + "\"" + userChoice + "\".");
         }
@@ -39,7 +39,7 @@ public class GradesApplication {
     public static void main(String[] args) {
         HashMap<String, Student> students = new HashMap<>();
         Student cody = new Student("Cody");
-        cody.setGrades(70, 75, 80, 89);
+        cody.setGrades(70, 75, 80);
         Student jim = new Student("Jim");
         jim.setGrades(80, 90, 100);
         Student bill = new Student("Bill");
