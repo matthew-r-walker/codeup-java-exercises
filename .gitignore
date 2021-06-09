@@ -16,3 +16,4 @@ src/CollectionsLec.java
 src/annotations/*
 src/ExceptionLec.java
 src/ExceptionsLecTest.java
+src/CustomException.java

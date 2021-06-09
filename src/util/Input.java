@@ -7,7 +7,7 @@ public class Input {
     private Scanner scanner = new Scanner(System.in);
 
     public String getString() {
-        System.out.println("Enter a sentence.");
+//        System.out.println("Enter a sentence.");
         return scanner.nextLine();
     }
 
@@ -19,6 +19,16 @@ public class Input {
     public int getInt(){
         System.out.println("Enter a number.");
         return scanner.nextInt();
+    }
+    // Exception handling
+    public int getIntStr() {
+        System.out.println("Enter a number.");
+        try {
+           return Integer.valueOf(getString());
+        } catch (NumberFormatException nfe) {
+            System.out.println("Enter a number please.");
+            return getIntStr();
+        }
     }
     public int getInt(int min, int max) {
         System.out.printf("Enter a number between %d and %d:%n", min, max);
@@ -33,6 +43,16 @@ public class Input {
     public double getDouble(){
         System.out.println("Enter a number with a decimal.");
         return scanner.nextDouble();
+    }
+    // Exception handling
+    public Double getDoubleStr() {
+        System.out.println("Enter a decimal number.");
+        try {
+            return Double.valueOf(getString());
+        } catch (NumberFormatException nfe) {
+            System.out.println("Enter a decimal number please.");
+            return getDoubleStr();
+        }
     }
     public double getDouble(double min, double max) {
         System.out.printf("Enter a number with a decimal between %f and %f:%n", min, max);
