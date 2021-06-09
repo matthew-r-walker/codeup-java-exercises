@@ -29,32 +29,31 @@ public class GroceryApp {
             makeGroceryList();
         }
     }
-    /// Currently souts multiple times if I continue to add more items to list by calling the function recursively
+
     public static void makeGroceryList() {
-        System.out.println("Which category would you like to choose from?");
-        for (int i = 0; i < groceryCats.length; ++i) {
-            System.out.println(i + 1 + ". " + groceryCats[i]);
-        }
-
-        int userNum = input.getInt(1, groceryCats.length);
-        String userChoice = groceryCats[userNum -1];
-        System.out.println(userChoice);
-
-        if (!gList.containsKey(userChoice)) {
-            addCat(userChoice);
-        }
-
-        HashMap<String, Integer> selectedCat = gList.get(userChoice);
-
         do {
-            addItemOrUpdateItemVal(selectedCat);
-            System.out.println("Would you like to add another item from " + userChoice);
-        } while (input.yesNo());
+            System.out.println("Which category would you like to choose from?");
+            for (int i = 0; i < groceryCats.length; ++i) {
+                System.out.println(i + 1 + ". " + groceryCats[i]);
+            }
 
-        System.out.println("Would you like to add more to the list?");
-        if (input.yesNo()) {
-            makeGroceryList();
-        }
+            int userNum = input.getInt(1, groceryCats.length);
+            String userChoice = groceryCats[userNum - 1];
+            System.out.println(userChoice);
+
+            if (!gList.containsKey(userChoice)) {
+                addCat(userChoice);
+            }
+
+            HashMap<String, Integer> selectedCat = gList.get(userChoice);
+
+            do {
+                addItemOrUpdateItemVal(selectedCat);
+                System.out.println("Would you like to add another item from " + userChoice);
+            } while (input.yesNo());
+
+            System.out.println("Would you like to add more to the list?");
+        } while (input.yesNo());
 
         System.out.println(gList);
     }
