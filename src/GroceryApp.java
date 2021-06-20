@@ -1,7 +1,7 @@
 import util.Input;
 
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
+import java.util.Map.*;
 
 public class GroceryApp {
 
@@ -55,8 +55,33 @@ public class GroceryApp {
             System.out.println("Would you like to add more to the list?");
         } while (input.yesNo());
 
-        System.out.println(gList);
+        displayList();
     }
+
+    public static void displayList() {
+        ArrayList<String> listCats = new ArrayList<>(gList.keySet());
+        Collections.sort(listCats);
+
+        for (String cat : listCats) {
+            if (gList.containsKey(cat)) {
+                // add category values(items and values) to an array for that category
+                Set<Entry<String, Integer>> entrySet = gList.get(cat).entrySet();
+                ArrayList<Entry<String, Integer>> listOfEntry = new ArrayList<>(entrySet);
+                ArrayList<String> itemList = new ArrayList<>();
+
+                for (Entry<String, Integer> set : listOfEntry) {
+                    itemList.add(set.toString().replace('=', ' '));
+                }
+
+                Collections.sort(itemList);
+                System.out.println("-----------\n" + cat + "\n-----------");
+                for (String item : itemList) {
+                    System.out.println(item);
+                }
+            }
+        }
+    }
+
 
     public static void addItemOrUpdateItemVal(HashMap<String, Integer> items) {
         System.out.println("What item would you like to add?");
