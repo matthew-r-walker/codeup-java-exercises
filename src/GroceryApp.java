@@ -6,10 +6,10 @@ import java.util.Map.*;
 public class GroceryApp {
 
     public static String[] groceryCats = {
-//        "Baby",
-//        "Beverages",
-//        "Bread & Bakery",
-//        "Breakfast & Cereal",
+        "Baby",
+        "Beverages",
+        "Bread & Bakery",
+        "Breakfast & Cereal",
         "Dairy, Eggs & Cheese",
         "Deli",
         "Frozen Foods",
@@ -104,20 +104,8 @@ public class GroceryApp {
 
 
     public static void main(String[] args) {
-//        HashMap<String, Integer> items = new HashMap<>();
-//        items.put("Banana", 7);
-//        gList.put(groceryCats[4], items);
 
         makeIt();
-//        items.put("Strawberries", 7);
-//
-//        addItemOrUpdateItemVal(items);
-
-//        System.out.println(items.get("Banana"));
-
-//        updateVal(items, "Banana", 4);
-
-//        System.out.println(items.get("Banana"));
 
         // this will display what is in the produce hash map key value
 //        System.out.println(gList.get("Produce"));
