@@ -1,10 +1,10 @@
 import util.Input;
-
 import java.util.*;
 import java.util.Map.*;
 
 public class GroceryApp {
 
+    // Array of grocery categories. If you add to this the application will continue to operate properly.
     public static String[] groceryCats = {
         "Baby",
         "Beverages",
@@ -22,14 +22,15 @@ public class GroceryApp {
     public static Scanner sc = new Scanner(System.in);
 
     public static HashMap<String, HashMap<String, Integer>> gList = new HashMap<>();
-
+    // This method runs makeGroceryList() based on user response
     public static void makeIt() {
         System.out.println("Would you like to create a grocery list?");
         if (input.yesNo()) {
             makeGroceryList();
         }
     }
-
+    // This method displays grocery categories and allows users to select a category and add items to it
+    // until the user decides they're done adding items, once the user is done adding items it executes displayList()
     public static void makeGroceryList() {
         do {
             System.out.println("Which category would you like to choose from?");
@@ -57,14 +58,14 @@ public class GroceryApp {
 
         displayList();
     }
-
+    //  This method displays a list of categories and items within each category, it will alphabetize
+    //  the list categories and the items within each category
     public static void displayList() {
         ArrayList<String> listCats = new ArrayList<>(gList.keySet());
         Collections.sort(listCats);
 
         for (String cat : listCats) {
             if (gList.containsKey(cat)) {
-                // add category values(items and values) to an array for that category
                 Set<Entry<String, Integer>> entrySet = gList.get(cat).entrySet();
                 ArrayList<Entry<String, Integer>> listOfEntry = new ArrayList<>(entrySet);
                 ArrayList<String> itemList = new ArrayList<>();
@@ -82,12 +83,13 @@ public class GroceryApp {
         }
     }
 
-
+    // This method allows the user to add a new item to the selected category or update an existing items quantity
     public static void addItemOrUpdateItemVal(HashMap<String, Integer> items) {
         System.out.println("What item would you like to add?");
         String userInpItem = sc.nextLine();
         System.out.println("How many " + userInpItem + " would you like to add?");
         int userNum = input.getInt();
+
         if (items.containsKey(userInpItem)) {
             int oldVal = items.get(userInpItem);
             items.replace(userInpItem, oldVal + userNum);
@@ -95,7 +97,7 @@ public class GroceryApp {
             items.put(userInpItem, userNum);
         }
     }
-
+    // This method adds the user selected category to the list
     public static void addCat(String key) {
         if (!gList.containsKey(key)) {
             gList.put(key, new HashMap<String, Integer>());
