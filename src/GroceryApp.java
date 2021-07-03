@@ -22,6 +22,7 @@ public class GroceryApp {
     public static Scanner sc = new Scanner(System.in);
 
     public static HashMap<String, HashMap<String, Integer>> gList = new HashMap<>();
+
     // This method runs makeGroceryList() based on user response
     public static void makeIt() {
         System.out.println("Would you like to create a grocery list?");
